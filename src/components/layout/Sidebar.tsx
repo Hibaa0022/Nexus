@@ -3,7 +3,8 @@ import { NavLink } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
 import { 
   Home, Building2, CircleDollarSign, Users, MessageCircle, 
-  Bell, FileText, Settings, HelpCircle
+  Bell, FileText, Settings, HelpCircle,
+  Calendar, ShieldCheck, Wallet, Layout
 } from 'lucide-react';
 
 interface SidebarItemProps {
@@ -40,15 +41,19 @@ export const Sidebar: React.FC = () => {
     { to: '/dashboard/entrepreneur', icon: <Home size={20} />, text: 'Dashboard' },
     { to: '/profile/entrepreneur/' + user.id, icon: <Building2 size={20} />, text: 'My Startup' },
     { to: '/investors', icon: <CircleDollarSign size={20} />, text: 'Find Investors' },
+    { to: '/dashboard/calendar', icon: <Calendar size={20} />, text: 'Calendar' }, //new
     { to: '/messages', icon: <MessageCircle size={20} />, text: 'Messages' },
+    { to: '/dashboard/payment', icon: <Wallet size={20} />, text: 'Payments' }, // NEW
     { to: '/notifications', icon: <Bell size={20} />, text: 'Notifications' },
     { to: '/documents', icon: <FileText size={20} />, text: 'Documents' },
+    { to: '/dashboard/document-chamber', icon: <Layout size={20} />, text: 'Doc Chamber' }, // NEW
   ];
   
   const investorItems = [
     { to: '/dashboard/investor', icon: <Home size={20} />, text: 'Dashboard' },
     { to: '/profile/investor/' + user.id, icon: <CircleDollarSign size={20} />, text: 'My Portfolio' },
     { to: '/entrepreneurs', icon: <Users size={20} />, text: 'Find Startups' },
+    { to: '/dashboard/payment', icon: <Wallet size={20} />, text: 'Payments' }, // NEW
     { to: '/messages', icon: <MessageCircle size={20} />, text: 'Messages' },
     { to: '/notifications', icon: <Bell size={20} />, text: 'Notifications' },
     { to: '/deals', icon: <FileText size={20} />, text: 'Deals' },
@@ -56,9 +61,11 @@ export const Sidebar: React.FC = () => {
   
   const sidebarItems = user.role === 'entrepreneur' ? entrepreneurItems : investorItems;
   
+  
   // Common items at the bottom
   const commonItems = [
     { to: '/settings', icon: <Settings size={20} />, text: 'Settings' },
+    { to: '/dashboard/security', icon: <ShieldCheck size={20} />, text: 'Security' }, // NEW
     { to: '/help', icon: <HelpCircle size={20} />, text: 'Help & Support' },
   ];
   
