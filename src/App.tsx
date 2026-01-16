@@ -7,6 +7,7 @@ import MeetingScheduler from "./pages/dashboard/calendar/MeetingScheduler";
 import DocumentChamber from './pages/dashboard/documents/DocumentChamber';
 import PaymentSystem from './pages/dashboard/Payment/PaymentSystem';
 import SecuritySettings from './pages/dashboard/Security/SecuritySystem';
+import VideoCall from './pages/dashboard/video/VideoCall';
 
 // Layouts
 import { DashboardLayout } from './components/layout/DashboardLayout';
@@ -49,9 +50,10 @@ function App() {
           <Route path="/dashboard" element={<DashboardLayout />}>
             <Route path="entrepreneur" element={<EntrepreneurDashboard />} />
             <Route path="investor" element={<InvestorDashboard />} />
-            <Route path="calendar" element={<MeetingScheduler />} />
+            <Route path="calendar" element={<MeetingScheduler />} /> 
             <Route path="document-chamber" element={<DocumentChamber />} />
             <Route path="payment" element={<PaymentSystem />} />
+            <Route path="video-call" element={<VideoCall />} />
             <Route path="security" element={<SecuritySettings />} />
           </Route>
           
